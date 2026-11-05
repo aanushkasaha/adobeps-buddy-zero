@@ -1,0 +1,57 @@
+{
+  "courses": [
+    {
+      "code": "CS3101",
+      "title": "Operating System",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "semester": 5,
+      "prerequisites": "not stated on source",
+      "skills": [
+        "process management and scheduling",
+        "process synchronization and IPC",
+        "threads",
+        "deadlock",
+        "memory management and paging",
+        "virtual memory",
+        "file systems",
+        "disk management"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "CS3102",
+      "title": "Computer Network",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "semester": 6,
+      "prerequisites": "not stated on source",
+      "skills": [
+        "layered network architecture",
+        "network applications",
+        "web architecture",
+        "network security",
+        "wireless networking",
+        "network management"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "CS2202",
+      "title": "Database and Warehousing",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "semester": 4,
+      "prerequisites": "not stated on source",
+      "skills": [
+        "ER modeling and schema design",
+        "normalization",
+        "SQL queries and joins",
+        "indexing and stored procedures",
+        "database design and integrity constraints",
+        "backup, recovery and performance tuning"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    }
+  ]
+}

@@ -21,10 +21,11 @@ def _log_usage(usage):
         f.write(json.dumps(log_entry) + "\n")
 
 
-# Send request with timeout and rate-limit retry logic
+# Send request with retry logic for rate limits, timeouts, and empty replies
 def _send_request(messages):
     rate_retries = 0
     timeout_retries = 0
+    empty_retries = 0
     delays = [2, 4, 8]
 
     while True:
@@ -37,20 +38,24 @@ def _send_request(messages):
                 timeout=30,
             )
             _log_usage(r.usage)
-            return r.choices[0].message.content
-        except (RateLimitError, Exception) as e:
-            if isinstance(e, RateLimitError) or getattr(e, "status_code", None) == 429:
-                if rate_retries < len(delays):
-                    time.sleep(delays[rate_retries])
-                    rate_retries += 1
+            content = r.choices[0].message.content
+            if not content or not content.strip():
+                if empty_retries < 1:
+                    empty_retries += 1
                     continue
-                raise RuntimeError("LLM rate limit reached; failed after 3 retries.") from e
-            if isinstance(e, (Timeout, TimeoutError)):
-                if timeout_retries < 1:
-                    timeout_retries += 1
-                    continue
-                raise RuntimeError("LLM request timed out after retry.") from e
-            raise
+                raise ValueError("LLM returned an empty response after retry.")
+            return content
+        except RateLimitError as e:
+            if rate_retries < len(delays):
+                time.sleep(delays[rate_retries])
+                rate_retries += 1
+                continue
+            raise RuntimeError("LLM rate limit reached; failed after 3 retries.") from e
+        except Timeout as e:
+            if timeout_retries < 1:
+                timeout_retries += 1
+                continue
+            raise RuntimeError("LLM request timed out after retry.") from e
 
 
 # Call LLM and optionally parse and validate JSON response

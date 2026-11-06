@@ -5,62 +5,89 @@
     "course",
     "interview"
   ],
+  "constants": {
+    "weekly_study_cap_hours": 12,
+    "horizon_weeks": 10
+  },
+  "note": "All values for est_hours, order_after dependencies, and constants are author-assigned.",
   "targets": [
     {
       "id": "dsa.core",
       "title": "Core data structures, sorting and searching",
       "required_depth": "interview",
       "defined_by": "CS1201",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 12,
+      "order_after": []
     },
     {
       "id": "dsa.graphs",
       "title": "Graph traversal, MST and shortest paths",
       "required_depth": "interview",
       "defined_by": "CS2101",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 10,
+      "order_after": [
+        "dsa.core"
+      ]
     },
     {
       "id": "dsa.dp",
       "title": "Dynamic programming",
       "required_depth": "interview",
       "defined_by": "CS2101",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 16,
+      "order_after": [
+        "dsa.core"
+      ]
     },
     {
       "id": "dsa.greedy_backtracking",
       "title": "Greedy algorithms and backtracking",
       "required_depth": "interview",
       "defined_by": "CS2101",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 12,
+      "order_after": [
+        "dsa.core"
+      ]
     },
     {
       "id": "os.core",
       "title": "Operating systems fundamentals",
       "required_depth": "interview",
       "defined_by": "CS3101",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 20,
+      "order_after": []
     },
     {
       "id": "dbms.core",
       "title": "Database fundamentals and SQL",
       "required_depth": "interview",
       "defined_by": "CS2202",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 15,
+      "order_after": []
     },
     {
       "id": "cn.core",
       "title": "Computer networks fundamentals",
       "required_depth": "interview",
       "defined_by": "CS3102",
-      "kind": "syllabus"
+      "kind": "syllabus",
+      "est_hours": 15,
+      "order_after": []
     },
     {
       "id": "proj.web_backend",
       "title": "A deployed web or backend project",
       "required_depth": "course",
       "defined_by": null,
-      "kind": "self_study"
+      "kind": "self_study",
+      "est_hours": 25,
+      "order_after": []
     }
   ]
 }

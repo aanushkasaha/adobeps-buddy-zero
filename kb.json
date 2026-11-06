@@ -55,6 +55,113 @@
         "backup, recovery and performance tuning"
       ],
       "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "CS1101",
+      "title": "Foundations of Programming",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "cse_semester": 1,
+      "prerequisites": [],
+      "prerequisites_stated": false,
+      "skills": [
+        "C syntax, data types, operators and control structures",
+        "functions, and recursion versus iteration",
+        "arrays, strings and 2D arrays with pointers",
+        "pointers",
+        "structures and unions",
+        "dynamic memory allocation",
+        "file handling",
+        "debugging and testing C programs"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "CS1201",
+      "title": "Data Structure",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "cse_semester": 2,
+      "prerequisites": [],
+      "prerequisites_stated": false,
+      "skills": [
+        "time and space analysis, asymptotic notation",
+        "abstract data types",
+        "stack, queue, list and linked structures",
+        "unfolding recursion",
+        "trees, binary trees and traversal",
+        "searching and sorting",
+        "graph traversal, MST and shortest distance",
+        "balanced trees"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "MA1201",
+      "title": "Probability Theory and Ordinary Differential Equations",
+      "ltpc": "3-1-0-4",
+      "credits": 4,
+      "cse_semester": 2,
+      "prerequisites": [],
+      "prerequisites_stated": false,
+      "skills": [
+        "random variables and probability distributions",
+        "expectation and variance",
+        "random sampling and parameter estimation",
+        "hypothesis testing",
+        "first-order ordinary differential equations",
+        "linear and higher-order ordinary differential equations and systems",
+        "power series solutions and special functions"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    },
+    {
+      "code": "CS2101",
+      "title": "Algorithm",
+      "ltpc": "3-0-3-4.5",
+      "credits": 4.5,
+      "cse_semester": 3,
+      "prerequisites": [],
+      "prerequisites_stated": false,
+      "skills": [
+        "complexity analysis and the master theorem",
+        "sorting, searching, hashing and string matching",
+        "greedy algorithms",
+        "divide and conquer, and branch and bound",
+        "backtracking",
+        "dynamic programming (matrix chain multiplication, 0/1 knapsack)",
+        "graph algorithms (MST, shortest distance, colouring, vertex cover, TSP)",
+        "P, NP, NP-complete and NP-hard",
+        "randomized and approximation algorithms"
+      ],
+      "source": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/CSE.html"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R1",
+      "title": "Credits from L-T-P",
+      "text": "Course credits = L + T + P/2. Lecture and tutorial hours count in full; practical hours count at half.",
+      "source": null,
+      "provenance": "student-reported",
+      "note": "Matches every course row on the IITP Chemical and Biochemical curriculum page except CB4198 Summer Internship (listed 0-0-12-3, which the formula would make 6).",
+      "evidence_url": "https://academics.iitp.ac.in/revised_syllabus/B.TECH-CSE/sem-1/chemicalengineering.html"
+    },
+    {
+      "id": "R2",
+      "title": "Attendance",
+      "text": "A minimum of 75% attendance is mandatory in every subject, including labs (practical, P).",
+      "source": null,
+      "provenance": "student-reported",
+      "note": "Official source link still to be added."
+    },
+    {
+      "id": "R3",
+      "title": "Elective allotment",
+      "text": "Electives are allotted first come, first served. The capacity of an elective is the number of students divided by the number of electives.",
+      "source": null,
+      "provenance": "student-reported",
+      "note": "Official source link still to be added."
     }
   ]
 }

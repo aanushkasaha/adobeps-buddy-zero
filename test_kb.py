@@ -3,10 +3,17 @@ import re
 import pytest
 
 
-def load_courses():
+def load_kb():
     with open("kb.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data.get("courses", [])
+        return json.load(f)
+
+
+def load_courses():
+    return load_kb().get("courses", [])
+
+
+def load_rules():
+    return load_kb().get("rules", [])
 
 
 def test_unique_course_codes():
@@ -50,7 +57,14 @@ def test_course_schema_and_values():
             f"Credits mismatch in {code}: ltpc={course['ltpc']}, credits={course['credits']}"
         )
 
-        # 4. prerequisites is list, prerequisites_stated is bool; if false, prerequisites is empty
+        # 4. Credits == L + T + P/2
+        l, t, p, _ = map(float, ltpc_parts)
+        expected_credits = l + t + p / 2.0
+        assert float(course["credits"]) == expected_credits, (
+            f"Credits formula mismatch in {code}: {l} + {t} + {p}/2 = {expected_credits} != {course['credits']}"
+        )
+
+        # 5. prerequisites is list, prerequisites_stated is bool; if false, prerequisites is empty
         assert isinstance(course["prerequisites"], list), (
             f"prerequisites must be list in {code}"
         )
@@ -62,7 +76,7 @@ def test_course_schema_and_values():
                 f"prerequisites must be empty when prerequisites_stated is False in {code}"
             )
 
-        # 5. cse_semester is an integer from 1 to 8
+        # 6. cse_semester is an integer from 1 to 8
         assert isinstance(course["cse_semester"], int), (
             f"cse_semester must be an integer in {code}"
         )
@@ -70,7 +84,7 @@ def test_course_schema_and_values():
             f"cse_semester out of range 1-8 in {code}: {course['cse_semester']}"
         )
 
-        # 6. skills is a non-empty list of strings
+        # 7. skills is a non-empty list of strings
         assert isinstance(course["skills"], list) and len(course["skills"]) > 0, (
             f"skills must be a non-empty list in {code}"
         )
@@ -78,7 +92,45 @@ def test_course_schema_and_values():
             f"skills must be non-empty strings in {code}"
         )
 
-        # 7. source starts with https://academics.iitp.ac.in/
+        # 8. source starts with https://academics.iitp.ac.in/
         assert isinstance(course["source"], str) and course["source"].startswith(
             "https://academics.iitp.ac.in/"
         ), f"source must start with https://academics.iitp.ac.in/ in {code}"
+
+
+def test_rules_exist_and_unique_ids():
+    kb = load_kb()
+    assert "rules" in kb, "'rules' key missing from kb.json"
+    rules = kb["rules"]
+    assert isinstance(rules, list), "'rules' must be a list"
+    assert len(rules) > 0, "'rules' must be a non-empty list"
+
+    rule_ids = [r.get("id") for r in rules]
+    assert len(rule_ids) == len(set(rule_ids)), f"Duplicate rule IDs found: {rule_ids}"
+
+
+def test_rule_schema_and_provenance():
+    kb = load_kb()
+    assert "rules" in kb, "'rules' key missing from kb.json"
+    rules = kb["rules"]
+    assert isinstance(rules, list) and len(rules) > 0, "'rules' must be a non-empty list"
+
+    required_rule_keys = {"id", "title", "text", "source", "provenance"}
+
+    for rule in rules:
+        rule_id = rule.get("id", "<unknown>")
+        missing = required_rule_keys - set(rule.keys())
+        assert not missing, f"Rule {rule_id} missing keys: {missing}"
+
+        source = rule.get("source")
+        provenance = rule.get("provenance")
+
+        valid_source = isinstance(source, str) and source.startswith(
+            "https://academics.iitp.ac.in/"
+        )
+        valid_provenance = provenance == "student-reported"
+
+        assert valid_source or valid_provenance, (
+            f"Rule {rule_id} must have source starting with https://academics.iitp.ac.in/ "
+            f"or provenance 'student-reported' (source={source!r}, provenance={provenance!r})"
+        )

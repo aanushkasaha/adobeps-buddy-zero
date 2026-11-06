@@ -1,0 +1,88 @@
+{
+  "plan": {
+    "items": [
+      {
+        "target_id": "cn.core",
+        "order": 1
+      },
+      {
+        "target_id": "dsa.core",
+        "order": 2
+      },
+      {
+        "target_id": "dsa.greedy_backtracking",
+        "order": 3
+      },
+      {
+        "target_id": "dsa.dp",
+        "order": 4
+      },
+      {
+        "target_id": "os.core",
+        "order": 5
+      },
+      {
+        "target_id": "dbms.core",
+        "order": 6
+      },
+      {
+        "target_id": "proj.web_backend",
+        "order": 7
+      }
+    ],
+    "skipped": [
+      "dsa.graphs"
+    ],
+    "deferred": []
+  },
+  "explanations": [
+    {
+      "target_id": "cn.core",
+      "status": "item",
+      "why": "This target is included to achieve interview-depth competency, as the student has no prior networking knowledge and the course systematically covers essential fundamentals\u2014layered architecture, network applications, security, wireless networking, and management\u2014directly aligned with interview expectations.",
+      "source": "llm"
+    },
+    {
+      "target_id": "dsa.core",
+      "status": "item",
+      "why": "The student's basic depth and weak performance in CS1201 indicate unresolved gaps in core data structures and algorithmic analysis, making this target essential to build interview-ready proficiency in sorting, searching, and related topics.",
+      "source": "llm"
+    },
+    {
+      "target_id": "dsa.greedy_backtracking",
+      "status": "item",
+      "why": "This target advances the student from no prior depth to interview-level proficiency by building on their existing foundation in greedy algorithms and backtracking, ensuring they can strategically select and combine approaches for complex algorithmic problems. It consolidates core DSA concepts with the problem-solving patterns and optimization techniques commonly evaluated in technical interviews.",
+      "source": "llm"
+    },
+    {
+      "target_id": "dsa.dp",
+      "status": "item",
+      "why": "The student has basic proficiency in dynamic programming but consistently fails most DP problems in mock OAs and self-identifies as weak in the subject, so targeted practice is needed to reach interview readiness.",
+      "source": "llm"
+    },
+    {
+      "target_id": "os.core",
+      "status": "item",
+      "why": "The student\u2019s basic OS foundation is insufficient for interview-level technical questions, so this target systematically covers all defined fundamentals\u2014process management, memory, IPC, and more\u2014to reach the required depth. It ensures competency in the core concepts frequently assessed in system design and OS interviews.",
+      "source": "llm"
+    },
+    {
+      "target_id": "dbms.core",
+      "status": "item",
+      "why": "The student possesses only basic DBMS knowledge but requires interview-level proficiency, so the plan systematically advances skills from foundational concepts like ER modeling and SQL joins to critical interview topics such as performance tuning, indexing, and backup/recovery. This ensures comprehensive coverage of all defined course skills necessary to confidently tackle technical database interviews.",
+      "source": "llm"
+    },
+    {
+      "target_id": "proj.web_backend",
+      "status": "item",
+      "why": "The student has no prior experience deploying web or backend projects, so this target ensures they gain practical deployment skills as part of the course requirements. It bridges the gap between their current skill level and the course's expected competency in backend deployment.",
+      "source": "llm"
+    },
+    {
+      "target_id": "dsa.graphs",
+      "status": "skipped",
+      "why": "Skipped because fact F3 confirms interview depth (source: tested, trust: medium).",
+      "source": "template"
+    }
+  ]
+}

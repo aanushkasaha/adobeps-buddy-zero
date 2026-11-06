@@ -1,0 +1,66 @@
+{
+  "depth_levels": [
+    "none",
+    "basic",
+    "course",
+    "interview"
+  ],
+  "targets": [
+    {
+      "id": "dsa.core",
+      "title": "Core data structures, sorting and searching",
+      "required_depth": "interview",
+      "defined_by": "CS1201",
+      "kind": "syllabus"
+    },
+    {
+      "id": "dsa.graphs",
+      "title": "Graph traversal, MST and shortest paths",
+      "required_depth": "interview",
+      "defined_by": "CS2101",
+      "kind": "syllabus"
+    },
+    {
+      "id": "dsa.dp",
+      "title": "Dynamic programming",
+      "required_depth": "interview",
+      "defined_by": "CS2101",
+      "kind": "syllabus"
+    },
+    {
+      "id": "dsa.greedy_backtracking",
+      "title": "Greedy algorithms and backtracking",
+      "required_depth": "interview",
+      "defined_by": "CS2101",
+      "kind": "syllabus"
+    },
+    {
+      "id": "os.core",
+      "title": "Operating systems fundamentals",
+      "required_depth": "interview",
+      "defined_by": "CS3101",
+      "kind": "syllabus"
+    },
+    {
+      "id": "dbms.core",
+      "title": "Database fundamentals and SQL",
+      "required_depth": "interview",
+      "defined_by": "CS2202",
+      "kind": "syllabus"
+    },
+    {
+      "id": "cn.core",
+      "title": "Computer networks fundamentals",
+      "required_depth": "interview",
+      "defined_by": "CS3102",
+      "kind": "syllabus"
+    },
+    {
+      "id": "proj.web_backend",
+      "title": "A deployed web or backend project",
+      "required_depth": "course",
+      "defined_by": null,
+      "kind": "self_study"
+    }
+  ]
+}

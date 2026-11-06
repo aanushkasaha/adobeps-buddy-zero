@@ -1,0 +1,78 @@
+{
+  "student": "Student A (fictional)",
+  "programme": "B.Tech Chemical and Biochemical Engineering, 3rd year",
+  "facts": [
+    {
+      "id": "F1",
+      "topic": "programming.c",
+      "claim": "Completed CS1101 with a good grade",
+      "depth": "course",
+      "source": "graded",
+      "trust": "high",
+      "evidence": "CS1101, grade A (placeholder)"
+    },
+    {
+      "id": "F2",
+      "topic": "dsa.core",
+      "claim": "Completed CS1201 with a weak grade",
+      "depth": "basic",
+      "source": "graded",
+      "trust": "high",
+      "evidence": "CS1201, grade C (placeholder); depth is basic because the grade is below B"
+    },
+    {
+      "id": "F3",
+      "topic": "dsa.graphs",
+      "claim": "Solves graph problems in mock OAs",
+      "depth": "interview",
+      "source": "tested",
+      "trust": "medium",
+      "evidence": "Weekly mock OAs, last 4 weeks: 7 of 8 graph problems solved (placeholder)"
+    },
+    {
+      "id": "F4",
+      "topic": "dsa.dp",
+      "claim": "Fails most DP problems in mock OAs",
+      "depth": "basic",
+      "source": "tested",
+      "trust": "medium",
+      "evidence": "Weekly mock OAs, last 4 weeks: 1 of 6 DP problems solved (placeholder)"
+    },
+    {
+      "id": "F5",
+      "topic": "dsa.dp",
+      "claim": "Says she is weak at dynamic programming",
+      "depth": "basic",
+      "source": "self_declared",
+      "trust": "medium",
+      "evidence": "Student's own statement"
+    },
+    {
+      "id": "F6",
+      "topic": "dbms.core",
+      "claim": "Has studied DBMS basics",
+      "depth": "basic",
+      "source": "self_declared",
+      "trust": "medium",
+      "evidence": "Student's own statement"
+    },
+    {
+      "id": "F7",
+      "topic": "os.core",
+      "claim": "Has studied basic OS",
+      "depth": "basic",
+      "source": "self_declared",
+      "trust": "medium",
+      "evidence": "Student's own statement"
+    },
+    {
+      "id": "F8",
+      "topic": "proj.web_backend",
+      "claim": "Has not deployed a web or backend project yet",
+      "depth": "none",
+      "source": "self_declared",
+      "trust": "medium",
+      "evidence": "Student's own statement"
+    }
+  ]
+}

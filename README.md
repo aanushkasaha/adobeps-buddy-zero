@@ -31,6 +31,15 @@ A study buddy for one fictional student (non-CS, Chemical and Biochemical Engine
 * If `check_plan` finds a violation, `main.py` stops before any LLM call.
 * If an LLM call fails, a template explanation is used automatically.
 
+## Results (live run, nvidia/nemotron-3.5-lightning:free)
+
+- Plan: 7 items, 115 h of a 120 h budget (12 h/week x 10 weeks); 1 target skipped because a tested profile fact already shows interview-level depth
+- LLM usage: 7 calls, 5,984 tokens total (974 prompt / 5,010 completion), about 854 per call
+- End-to-end time: about 40 s (about 4 s CPU; the rest is waiting on the free endpoint)
+- Cost: $0
+- Completion tokens dominate because the model is a reasoning model
+- Single run; token counts vary between runs
+
 ## Data Provenance
 
 * `kb.json` (7 courses and rules R1 to R3) was compiled and cross-checked by the author, a current IIT Patna student, against the course structure and academic rules as they apply at the institute.
